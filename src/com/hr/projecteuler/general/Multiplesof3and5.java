@@ -59,5 +59,4 @@ public class Multiplesof3and5 {
 		}
 
 	}
-
 }

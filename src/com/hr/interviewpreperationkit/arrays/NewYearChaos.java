@@ -1,81 +1,41 @@
 package com.hr.interviewpreperationkit.arrays;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-import java.util.function.Consumer;
+import java.util.List;
 
 public class NewYearChaos {
+    public static void main(String[] args) {
+        minimumBribes(List.of(2, 1, 5, 3, 4));
+    }
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void minimumBribes(List<Integer> q) {
+        int p1 = 1;
+        int p2 = 2;
+        int p3 = 3;
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        int bribeCount = 0;
+        System.out.println(p1 + " " + p2 + " " + p3);
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        for (Integer item : q) {
+            if (p1 == item) {
+                p1 = p2;
+                p2 = p3;
+                p3++;
+            } else if (p2 == item) {
+                bribeCount++;
+                p2 = p3;
+                p3++;
+            } else if (p3 == item) {
+                bribeCount += 2;
+                p3++;
+            } else {
+                System.out.println("Too chaotic");
+                return;
+            }
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+            System.out.println(p1 + " " + p2 + " " + p3);
+        }
 
-	}
-
-	public static int[] bubbleSort(int[] inputArray) {
-
-		int length = inputArray.length;
-		int temp = 0;
-
-		for (int i = 0; i < length; i++) {
-			for (int j = 0; j < length - 1 - i; j++) {
-				if (inputArray[j] > inputArray[j + 1]) {
-					temp = inputArray[j];
-					inputArray[j] = inputArray[j + 1];
-					inputArray[j + 1] = temp;
-				}
-			}
-		}
-
-		return inputArray;
-
-	}
-
-	public static void main(String[] args) {
-
-		FastReader fr = new FastReader();
-
-		int cases = fr.nextInt();
-
-		int rotation = fr.nextInt();
-
-		for (int i = 0; i < cases; i++) {
-			int elmntsNo = fr.nextInt();
-			int[] elements = new int[elmntsNo];
-			for (int j = 0; j < elmntsNo; j++) {
-				elements[j] = fr.nextInt();
-			}
-			int[] a = bubbleSort(elements);
-			Consumer<int[]> c = (arr) -> {
-				for (int k : arr)
-					System.out.print(k + " ");
-				System.out.println();
-			};
-			c.accept(a);
-
-		}
-
-	}
+        System.out.println(bribeCount);
+    }
 
 }
