@@ -11,7 +11,7 @@ public class TheCoinChangeProblem {
 
     public static long getWays(int n, List<Long> c) {
         Collections.sort(c);
-        int[][] dp = new int[c.size()][Integer.parseInt(String.valueOf(c.get(c.size()-1)))];
+        int[][] dp = new int[c.size()][Integer.parseInt(String.valueOf(c.get(c.size() - 1)))];
         Arrays.fill(dp[0], 1);
 
 

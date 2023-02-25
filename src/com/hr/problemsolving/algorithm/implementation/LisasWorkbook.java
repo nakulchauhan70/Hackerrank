@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LisasWorkbook {
     public static void main(String[] args) {
-        System.out.println(workbook(5, 3, List.of(4, 2, 6, 1, 10)));
+//        System.out.println(workbook(5, 3, List.of(4, 2, 6, 1, 10)));
     }
 
     public static int workbook(int n, int k, List<Integer> arr) {

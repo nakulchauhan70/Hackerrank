@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class ArrayManipulation {
     public static void main(String[] args) {
-        System.out.println(arrayManipulation(5, List.of(List.of(1, 2, 100), List.of(2, 5, 100), List.of(3, 4, 100))));
-        System.out.println(arrayManipulation(10, List.of(List.of(1, 5, 3), List.of(4, 8, 7), List.of(6, 9, 1))));
+//        System.out.println(arrayManipulation(5, List.of(List.of(1, 2, 100), List.of(2, 5, 100), List.of(3, 4, 100))));
+//        System.out.println(arrayManipulation(10, List.of(List.of(1, 5, 3), List.of(4, 8, 7), List.of(6, 9, 1))));
     }
 
     static long arrayManipulation(int n, List<List<Integer>> queries) {

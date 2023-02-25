@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DynamicArray {
     public static void main(String[] args) {
-        dynamicArray(2, List.of(List.of(1, 0, 5), List.of(1, 1, 7), List.of(1, 0, 3), List.of(2, 1, 0), List.of(2, 1, 1))).forEach(System.out::println);
+//        dynamicArray(2, List.of(List.of(1, 0, 5), List.of(1, 1, 7), List.of(1, 0, 3), List.of(2, 1, 0), List.of(2, 1, 1))).forEach(System.out::println);
     }
 
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {

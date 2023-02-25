@@ -4,7 +4,7 @@ import java.util.List;
 
 public class UtopianTree {
     public static void main(String[] args) {
-        List.of(0, 1, 4).forEach(n -> System.out.println(utopianTree(n)));
+//        List.of(0, 1, 4).forEach(n -> System.out.println(utopianTree(n)));
     }
 
     public static int utopianTree(int n) {
@@ -17,7 +17,7 @@ public class UtopianTree {
             if (i % 2 != 0)
                 height *= 2;
             else
-                height ++;
+                height++;
         }
 
         return height;

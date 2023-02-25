@@ -9,78 +9,78 @@ import java.util.StringTokenizer;
 //Submitted
 public class AngryProfessor {
 
-	static ArrayList<String> decision = null;
+    static ArrayList<String> decision = null;
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void main(String[] args) {
+        FastReader fr = new FastReader();
+        int testCase = fr.nextInt();
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        decision = new ArrayList<String>(testCase);
+        while (testCase > 0) {
+            int student = fr.nextInt();
+            int threshold = fr.nextInt();
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+            int[] students = new int[student];
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+            for (int s = 0; s < students.length; s++) {
+                students[s] = fr.nextInt();
+            }
 
-		String nextLine() {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return str;
-		}
-	}
+            decide(students, threshold);
 
-	public static void main(String[] args) {
-		FastReader fr = new FastReader();
-		int testCase = fr.nextInt();
+            testCase--;
+        }
 
-		decision = new ArrayList<String>(testCase);
-		while (testCase > 0) {
-			int student = fr.nextInt();
-			int threshold = fr.nextInt();
+        decision.forEach(System.out::println);
+    }
 
-			int[] students = new int[student];
+    private static void decide(int[] students, int threshold) {
+        int count = 0;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] <= 0)
+                count++;
 
-			for (int s = 0; s < students.length; s++) {
-				students[s] = fr.nextInt();
-			}
+            if (count == threshold) {
+                decision.add("NO");
+                return;
+            }
 
-			decide(students, threshold);
+        }
 
-			testCase--;
-		}
+        decision.add("YES");
+    }
 
-		decision.forEach(System.out::println);
-	}
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-	private static void decide(int[] students, int threshold) {
-		int count = 0;
-		for (int i = 0; i < students.length; i++) {
-			if (students[i] <= 0)
-				count++;
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-			if (count == threshold) {
-				decision.add("NO");
-				return;
-			}
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
 
-		}
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
 
-		decision.add("YES");
-	}
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
 }

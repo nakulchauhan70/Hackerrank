@@ -8,45 +8,17 @@ import java.util.StringTokenizer;
 
 public class JavaStringReverse {
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void main(String[] args) {
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        Scanner sc = new Scanner(System.in);
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        int testCases = sc.nextInt();
 
-		double nextDouble() {
-			return Double.parseDouble(next());
-		}
+        System.out.println(sc.next());
+        while (testCases != 0) {
 
-		double nextInt() {
-			return Integer.parseInt(next());
-		}
-	}
-
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-
-		int testCases = sc.nextInt();
-
-		System.out.println(sc.next());
-		while (testCases!=0) {
-
-			testCases--;
-		}
+            testCases--;
+        }
 
 
 //		StringBuilder sb = new StringBuilder(input);
@@ -56,7 +28,35 @@ public class JavaStringReverse {
 //		else
 //			System.out.println("No");
 
-	}
+    }
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
+
+        double nextInt() {
+            return Integer.parseInt(next());
+        }
+    }
 
 }
 

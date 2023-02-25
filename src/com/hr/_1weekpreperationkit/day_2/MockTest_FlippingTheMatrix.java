@@ -4,7 +4,7 @@ import java.util.List;
 
 public class MockTest_FlippingTheMatrix {
     public static void main(String[] args) {
-        System.out.println(flippingMatrix(List.of(List.of(1, 2), List.of(3, 4))));
+//        System.out.println(flippingMatrix(List.of(List.of(1, 2), List.of(3, 4))));
     }
 
     public static int flippingMatrix(List<List<Integer>> matrix) {

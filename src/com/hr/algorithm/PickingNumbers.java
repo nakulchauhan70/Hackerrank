@@ -9,77 +9,77 @@ import java.util.StringTokenizer;
 
 public class PickingNumbers {
 
-	static int listCount;
+    static int listCount;
 
-	private static void pickingNumbers(List<Integer> list) {
-		int size = list.size();
+    private static void pickingNumbers(List<Integer> list) {
+        int size = list.size();
 
-		while (listCount <= size) {
-			for (int i = 0; i < size; i++) {
-				for (int j = i; j < size; j++) {
-					if (Math.abs(list.get(i) - list.get(j)) <= 0) {
+        while (listCount <= size) {
+            for (int i = 0; i < size; i++) {
+                for (int j = i; j < size; j++) {
+                    if (Math.abs(list.get(i) - list.get(j)) <= 0) {
 
-					} else {
-						list.remove(j);
-						pickingNumbers(list);
-					}
-				}
-			}
-			listCount++;
-			generateArray();
-		}
+                    } else {
+                        list.remove(j);
+                        pickingNumbers(list);
+                    }
+                }
+            }
+            listCount++;
+            generateArray();
+        }
 
-	}
+    }
 
-	private static void generateArray() {
+    private static void generateArray() {
 
-	}
+    }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		FastReader fr = new FastReader();
-		int no = fr.nextInt();
-		List<Integer> list = new ArrayList<Integer>(no);
-		for (int i = 0; i < no; i++) {
-			list.add(fr.nextInt());
-		}
+        FastReader fr = new FastReader();
+        int no = fr.nextInt();
+        List<Integer> list = new ArrayList<Integer>(no);
+        for (int i = 0; i < no; i++) {
+            list.add(fr.nextInt());
+        }
 
-		pickingNumbers(list);
+        pickingNumbers(list);
 
-	}
+    }
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
 
-		String nextLine() {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return str;
-		}
-	}
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
 
 }

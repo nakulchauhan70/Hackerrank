@@ -1,10 +1,11 @@
 package com.hr.problemsolving.algorithm.implementation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SubarrayDivision {
     public static void main(String[] args) {
-        System.out.println(birthday(List.of(1, 2, 1, 3, 2), 3, 2));
+//        System.out.println(birthday(List{1, 2, 1, 3, 2}, 3, 2));
 //        System.out.println(birthday(List.of(4), 4, 1));
     }
 

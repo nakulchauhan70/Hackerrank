@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DiagonalDifference {
     public static void main(String[] args) {
-        System.out.println(diagonalDifference(List.of(List.of(11, 2, 4), List.of(4, 5, 6), List.of(10, 8, -12))));
+//        System.out.println(diagonalDifference(List.of(List.of(11, 2, 4), List.of(4, 5, 6), List.of(10, 8, -12))));
     }
 
     public static int diagonalDifference(List<List<Integer>> arr) {

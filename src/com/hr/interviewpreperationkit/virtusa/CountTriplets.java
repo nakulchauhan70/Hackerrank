@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class CountTriplets {
     public static void main(String[] args) {
-        System.out.println(countTriplets(List.of(1L, 5L, 5L, 25L, 125L), 5));
+//        System.out.println(countTriplets(List.of(1L, 5L, 5L, 25L, 125L), 5));
     }
 
     static long countTriplets(List<Long> arr, long r) {

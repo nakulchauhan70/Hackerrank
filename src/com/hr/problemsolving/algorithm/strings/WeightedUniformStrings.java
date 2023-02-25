@@ -15,7 +15,7 @@ public class WeightedUniformStrings {
 
     public static void main(String[] args) {
         System.out.println('b' - 'a');
-        weightedUniformStrings("abccddde", List.of(1, 3, 12, 5, 9, 10)).forEach(System.out::println);
+//        weightedUniformStrings("abccddde", List.of(1, 3, 12, 5, 9, 10)).forEach(System.out::println);
     }
 
     public static List<String> weightedUniformStrings(String s, List<Integer> queries) {

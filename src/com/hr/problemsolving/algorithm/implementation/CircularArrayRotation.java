@@ -6,7 +6,7 @@ import java.util.List;
 public class CircularArrayRotation {
     public static void main(String[] args) {
 //        System.out.println(circularArrayRotation(List.of(3, 4, 5), 2, List.of(1, 2)));
-        System.out.println(circularArrayRotation(List.of(3, 4, 5), 2, List.of(1, 2)));
+//        System.out.println(circularArrayRotation(List.of(3, 4, 5), 2, List.of(1, 2)));
 
     }
 //

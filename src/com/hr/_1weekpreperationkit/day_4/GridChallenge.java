@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class GridChallenge {
     public static void main(String[] args) {
-        System.out.println(gridChallenge(List.of("abc", "hjk", "mpq", "rtv")));
+//        System.out.println(gridChallenge(List.of("abc", "hjk", "mpq", "rtv")));
     }
 
     //abc

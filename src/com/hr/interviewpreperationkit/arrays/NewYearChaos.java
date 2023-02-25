@@ -4,7 +4,7 @@ import java.util.List;
 
 public class NewYearChaos {
     public static void main(String[] args) {
-        minimumBribes(List.of(2, 1, 5, 3, 4));
+//        minimumBribes(List.of(2, 1, 5, 3, 4));
     }
 
     public static void minimumBribes(List<Integer> q) {
