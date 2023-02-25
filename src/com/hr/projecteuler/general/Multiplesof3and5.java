@@ -6,57 +6,57 @@ import java.util.StringTokenizer;
 
 public class Multiplesof3and5 {
 
-	private static void calculateSumOfmultiples(int[] input) {
+    private static void calculateSumOfmultiples(int[] input) {
 
-		int length = input.length;
-		int sum = 0;
-		for(int i=0;i<length;i++) {
-			for(int j=3,k=5;j<input[i]||k<input[i];j=j+3,k=k+5) {
-				if(0==j%3 || 0==k%5) {
-					sum+=j;
-				}
-			}
-			System.out.println(sum);
-			sum = 0;
-		}
-		
-	}
+        int length = input.length;
+        int sum = 0;
+        for (int i = 0; i < length; i++) {
+            for (int j = 3, k = 5; j < input[i] || k < input[i]; j = j + 3, k = k + 5) {
+                if (0 == j % 3 || 0 == k % 5) {
+                    sum += j;
+                }
+            }
+            System.out.println(sum);
+            sum = 0;
+        }
 
-	public static void main(String[] args) {
-		FastReader fr = new FastReader();
-		int cases = fr.nextInt();
-		int[] input = new int[cases];
+    }
 
-		for (int i = 0; i < cases; i++) {
-			input[i] = fr.nextInt();
-		}
+    public static void main(String[] args) {
+        FastReader fr = new FastReader();
+        int cases = fr.nextInt();
+        int[] input = new int[cases];
 
-		calculateSumOfmultiples(input);
-	}
+        for (int i = 0; i < cases; i++) {
+            input[i] = fr.nextInt();
+        }
 
-	static class FastReader {
+        calculateSumOfmultiples(input);
+    }
 
-		BufferedReader br;
-		StringTokenizer st;
+    static class FastReader {
 
-		FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        BufferedReader br;
+        StringTokenizer st;
 
-		String next() {
-			try {
-				while (st == null || !st.hasMoreElements()) {
-					st = new StringTokenizer(br.readLine());
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return st.nextToken();
-		}
+        FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+        String next() {
+            try {
+                while (st == null || !st.hasMoreElements()) {
+                    st = new StringTokenizer(br.readLine());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return st.nextToken();
+        }
 
-	}
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+    }
 }

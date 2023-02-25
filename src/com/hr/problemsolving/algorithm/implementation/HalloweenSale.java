@@ -8,7 +8,7 @@ public class HalloweenSale {
     }
 
     public static int howManyGames(int p, int d, int m, int s) {
-        if(s<p)
+        if (s < p)
             return 0;
 
         int noOfGamesBuy = 1;

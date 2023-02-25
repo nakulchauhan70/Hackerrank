@@ -12,64 +12,39 @@ import java.util.function.Consumer;
 
 public class Day11_2DArrays {
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    static int[][] subArr = new int[6 / 2][6 / 2];
+    static HashMap<Integer, int[][]> map = new HashMap<>();
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+    public static void main(String... s) {
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        FastReader fr = new FastReader();
+        int[][] twoDArr = new int[6][6];
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
+                twoDArr[i][j] = fr.nextInt();
+            }
+        }
 
-	}
+        for (int i = 0; i <= 6 / 2; i++) {
+            for (int j = 0; j <= 6 / 2; j++) {
+                gethourglasse(i, j, twoDArr);
+            }
+        }
 
-	static int[][] subArr = new int[6 / 2][6 / 2];
-	static HashMap<Integer, int[][]> map = new HashMap<>();
+        Consumer<HashMap<Integer, int[][]>> c = m -> {
 
-	public static void main(String... s) {
+            int max = Integer.MIN_VALUE;
+            Set<Entry<Integer, int[][]>> set = m.entrySet();
+            Iterator<Entry<Integer, int[][]>> itr = set.iterator();
 
-		FastReader fr = new FastReader();
-		int[][] twoDArr = new int[6][6];
+            while (itr.hasNext()) {
+                Entry<Integer, int[][]> e = itr.next();
+                if (max < e.getKey())
+                    max = e.getKey();
+            }
 
-		for (int i = 0; i < 6; i++) {
-			for (int j = 0; j < 6; j++) {
-				twoDArr[i][j] = fr.nextInt();
-			}
-		}
-
-		for (int i = 0; i <= 6 / 2; i++) {
-			for (int j = 0; j <= 6 / 2; j++) {
-				gethourglasse(i, j, twoDArr);
-			}
-		}
-
-		Consumer<HashMap<Integer, int[][]>> c = m -> {
-
-			int max = Integer.MIN_VALUE;
-			Set<Entry<Integer, int[][]>> set = m.entrySet();
-			Iterator<Entry<Integer, int[][]>> itr = set.iterator();
-
-			while (itr.hasNext()) {
-				Entry<Integer, int[][]> e = itr.next();
-				if (max < e.getKey())
-					max = e.getKey();
-			}
-
-			// max hourglass
+            // max hourglass
 //            int[][] arr = map.get(max);
 //            for(int i=0;i<arr.length;i++){
 //                for(int j=0;j<arr.length;j++){
@@ -82,41 +57,66 @@ public class Day11_2DArrays {
 //                System.out.println();
 //            }
 
-			// max hourglass sum
-			System.out.println(max);
+            // max hourglass sum
+            System.out.println(max);
 
-		};
+        };
 
-		c.accept(map);
+        c.accept(map);
 
-	}
+    }
 
-	private static void gethourglasse(int rowStart, int columnStart, int[][] twoDArr) {
+    private static void gethourglasse(int rowStart, int columnStart, int[][] twoDArr) {
 
-		int[][] subArr = new int[3][3];
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				subArr[i][j] = twoDArr[rowStart + i][columnStart + j];
-			}
-		}
-		calculateSum(subArr);
+        int[][] subArr = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                subArr[i][j] = twoDArr[rowStart + i][columnStart + j];
+            }
+        }
+        calculateSum(subArr);
 
-	}
+    }
 
-	private static void calculateSum(int[][] subArr) {
+    private static void calculateSum(int[][] subArr) {
 
-		int sum = 0;
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				if (!(1 == i && i != j)) {
-					// sum += subArr[i][j];
-					sum = sum + subArr[i][j];
-				}
-			}
-		}
+        int sum = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (!(1 == i && i != j)) {
+                    // sum += subArr[i][j];
+                    sum = sum + subArr[i][j];
+                }
+            }
+        }
 
-		map.put(sum, subArr);
+        map.put(sum, subArr);
 
-	}
+    }
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+    }
 
 }

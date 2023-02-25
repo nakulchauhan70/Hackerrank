@@ -8,73 +8,73 @@ import java.util.function.Consumer;
 
 public class LeftRotation {
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static int[] rotateArray(int[] elements, int rotation) {
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        int length = elements.length;
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        while (rotation > 0) {
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+            int i;
+            int temp = elements[0];
 
-	}
+            for (i = 0; i < length - 1; i++)
+                elements[i] = elements[i + 1];
+            elements[i] = temp;
 
-	public static int[] rotateArray(int[] elements, int rotation) {
+            rotation--;
+        }
 
-		int length = elements.length;
+        return elements;
 
-		while (rotation > 0) {
+    }
 
-			int i;
-			int temp = elements[0];
+    public static void main(String[] args) {
 
-			for (i = 0; i < length - 1; i++)
-				elements[i] = elements[i + 1];
-			elements[i] = temp;
+        FastReader fr = new FastReader();
 
-			rotation--;
-		}
+        int elmntsNo = fr.nextInt();
+        int rotation = fr.nextInt();
 
-		return elements;
+        int[] elements = new int[elmntsNo];
 
-	}
+        for (int i = 0; i < elmntsNo; i++) {
+            elements[i] = fr.nextInt();
+        }
 
-	public static void main(String[] args) {
+        int[] rotatedArr = rotateArray(elements, rotation);
 
-		FastReader fr = new FastReader();
+        Consumer<int[]> c = (arr) -> {
+            for (int k : arr)
+                System.out.print(k + " ");
+            System.out.println();
+        };
 
-		int elmntsNo = fr.nextInt();
-		int rotation = fr.nextInt();
+        c.accept(rotatedArr);
+    }
 
-		int[] elements = new int[elmntsNo];
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-		for (int i = 0; i < elmntsNo; i++) {
-			elements[i] = fr.nextInt();
-		}
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		int[] rotatedArr = rotateArray(elements, rotation);
-		
-		Consumer<int[]> c= (arr)->{
-			for (int k : arr)
-				System.out.print(k + " ");
-			System.out.println();
-		};
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
 
-		c.accept(rotatedArr);
-	}
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+    }
 
 }

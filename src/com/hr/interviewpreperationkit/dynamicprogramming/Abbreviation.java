@@ -13,7 +13,8 @@ public class Abbreviation {
         System.out.println(abbreviation("sYOCa", "YOCN"));
         System.out.println(abbreviation("JHMWY", "HUVPW"));
     }
-//    YES
+
+    //    YES
 //            NO
 //    NO
 //            YES

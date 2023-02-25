@@ -1,29 +1,23 @@
 package com.hr.interviewpreperationkit.stringmanipulation;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class AlternatingCharacters {
-	public static int count=0;
+    private static final Scanner scanner = new Scanner(System.in);
+    public static int count = 0;
 
     static int alternatingCharacters(String s) {
-    	char[] schArr = s.toCharArray();
-    	for(int i=0;i<schArr.length;i++) {
-    		if(i+1<schArr.length) {
-    			if(s.charAt(i)==s.charAt(i+1)) {
-    				count++;		
-    			}
-    		}
-    	}
-    	return count;
+        char[] schArr = s.toCharArray();
+        for (int i = 0; i < schArr.length; i++) {
+            if (i + 1 < schArr.length) {
+                if (s.charAt(i) == s.charAt(i + 1)) {
+                    count++;
+                }
+            }
+        }
+        return count;
     }
-
-    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
         //BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -36,12 +30,12 @@ public class AlternatingCharacters {
 
             int result = alternatingCharacters(s);
             System.out.println(result);
-            count=0;
+            count = 0;
             //bufferedWriter.write(String.valueOf(result));
             //bufferedWriter.newLine();
         }
 
-      //  bufferedWriter.close();
+        //  bufferedWriter.close();
 
         scanner.close();
     }

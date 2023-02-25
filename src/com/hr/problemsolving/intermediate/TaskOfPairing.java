@@ -11,7 +11,7 @@ public class TaskOfPairing {
     }
 
 
-                                                                                public static long taskOfPairing(List<Long> freq) {
+    public static long taskOfPairing(List<Long> freq) {
         long pair = 0;
         List<Long> list = new ArrayList<>();
         long w = 1;

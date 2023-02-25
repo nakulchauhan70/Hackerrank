@@ -3,52 +3,51 @@ package com.hr.interviewpreperationkit.stringmanipulation;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class RepeatedString {
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void main(String[] args) {
+        FastReader fr = new FastReader();
+        String str = fr.nextLine();
+        long l = fr.nextLong();
 
-		FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+    }
 
-		String next() {
-			try {
-				while (st == null || !st.hasMoreElements()) {
-					st = new StringTokenizer(br.readLine());
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return st.nextToken();
-		}
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-		long nextLong() {
-			return Long.parseLong(next());
-		}
+        FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		String nextLine() {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return str;
-		}
+        String next() {
+            try {
+                while (st == null || !st.hasMoreElements()) {
+                    st = new StringTokenizer(br.readLine());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return st.nextToken();
+        }
 
-	}
+        long nextLong() {
+            return Long.parseLong(next());
+        }
 
-	public static void main(String[] args) {
-		FastReader fr = new FastReader();
-		String str = fr.nextLine();
-		long l = fr.nextLong();
-		
-	}
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+
+    }
 
 }
 //1000000000000

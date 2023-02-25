@@ -3,7 +3,7 @@ package com.hr.problemsolving.datastructures.linkedlist;
 public class DeleteANode {
     //20,6,2,19,10
     public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
-        if(position == 0){
+        if (position == 0) {
             head = head.next;
             return head;
         }

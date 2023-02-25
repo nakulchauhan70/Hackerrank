@@ -6,60 +6,60 @@ import java.util.StringTokenizer;
 
 public class YetAnotherArrayPartitioningTask {
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void main(String[] args) {
+        FastReader fr = new FastReader();
+        double n = fr.nextDouble();
+        double b = fr.nextDouble();
 
-		FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        double fact = factorial(n);
 
-		String next() {
-			try {
-				while (st == null || !st.hasMoreElements()) {
-					st = new StringTokenizer(br.readLine());
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return st.nextToken();
-		}
+        int f = (int) fact;
+        int r = (int) b;
 
-		double nextDouble() {
-			return Double.parseDouble(next());
-		}
+        String baseR = Integer.toString(Integer.parseInt(String.valueOf(f), 10), r);
 
-	}
+        char[] baseRArr = baseR.toCharArray();
 
-	public static void main(String[] args) {
-		FastReader fr = new FastReader();
-		double n = fr.nextDouble();
-		double b = fr.nextDouble();
+        int length = baseRArr.length;
+        int count = 0, i = 0;
+        while (baseRArr[length - 1] == '0') {
+            count++;
+            length--;
+        }
+        System.out.println(count);
+    }
 
-		double fact = factorial(n);
+    private static double factorial(double n) {
+        if (0 == n) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
 
-		int f = (int) fact;
-		int r = (int) b;
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-		String baseR = Integer.toString(Integer.parseInt(String.valueOf(f), 10), r);
+        FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		char[] baseRArr = baseR.toCharArray();
+        String next() {
+            try {
+                while (st == null || !st.hasMoreElements()) {
+                    st = new StringTokenizer(br.readLine());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return st.nextToken();
+        }
 
-		int length = baseRArr.length;
-		int count = 0, i = 0;
-		while (baseRArr[length - 1] == '0') {
-			count++;
-			length--;
-		}
-		System.out.println(count);
-	}
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
 
-	private static double factorial(double n) {
-		if (0 == n) {
-			return 1;
-		} else {
-			return n * factorial(n - 1);
-		}
-	}
+    }
 
 }

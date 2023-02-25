@@ -31,7 +31,7 @@ public class LisasWorkbook {
         for (int i = 1; i <= problemsInChapter; i++) {
             problems.add(i);
         }
-        
+
         int specialProblem = 0;
 
         for (int l = startPage; l <= endPage; l++) {

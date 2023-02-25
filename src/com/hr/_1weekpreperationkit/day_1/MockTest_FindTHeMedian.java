@@ -11,10 +11,10 @@ public class MockTest_FindTHeMedian {
     public static int findMedian(List<Integer> arr) {
         arr.sort(Comparator.naturalOrder());
 
-        int mid = arr.size()/2;
+        int mid = arr.size() / 2;
 
         if (arr.size() % 2 == 0) {
-            return (arr.get(mid)+arr.get(mid-1))/2;
+            return (arr.get(mid) + arr.get(mid - 1)) / 2;
         } else {
             return arr.get(mid);
         }

@@ -9,7 +9,7 @@ public class Encryption {
 
     public static String encryption(String s) {
         StringBuilder builder = new StringBuilder();
-        s = s.replace(" ","");
+        s = s.replace(" ", "");
 
         int l = (int) Math.floor(Math.sqrt(s.length()));
         int h = (int) Math.ceil(Math.sqrt(s.length()));
@@ -22,9 +22,9 @@ public class Encryption {
 
         for (int i = 0; i < h; i++) {
             int j = i;
-            while (j<s.length()) {
+            while (j < s.length()) {
                 builder.append(s.charAt(j));
-                j = j+h;
+                j = j + h;
             }
             builder.append(" ");
         }

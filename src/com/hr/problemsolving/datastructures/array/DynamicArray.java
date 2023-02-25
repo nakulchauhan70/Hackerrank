@@ -2,8 +2,6 @@ package com.hr.problemsolving.datastructures.array;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class DynamicArray {
     public static void main(String[] args) {

@@ -6,16 +6,16 @@ import java.util.stream.Collectors;
 public class WeightedUniformStrings {
     static Map<Character, Integer> characterMap = new HashMap<>();
 
-    public static void main(String[] args) {
-        System.out.println('b' - 'a');
-        weightedUniformStrings("abccddde", List.of(1, 3, 12, 5, 9, 10)).forEach(System.out::println);
-    }
-
     static {
         int count = 1;
         for (int i = 97; i <= 122; i++) {
             characterMap.put((char) i, count++);
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println('b' - 'a');
+        weightedUniformStrings("abccddde", List.of(1, 3, 12, 5, 9, 10)).forEach(System.out::println);
     }
 
     public static List<String> weightedUniformStrings(String s, List<Integer> queries) {

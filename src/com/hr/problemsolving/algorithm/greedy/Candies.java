@@ -1,7 +1,5 @@
 package com.hr.problemsolving.algorithm.greedy;
 
-import java.util.List;
-
 public class Candies {
 //    public static void main(String[] args) {
 //        System.out.println(candies());
@@ -20,8 +18,6 @@ public class Candies {
 
 //temp = 1 2<4 ? 1 : 2
 //
-
-
 
 
 //1+ 2+ 1+ 2+ 1+ 2+ 3+ 4+ 2+ 1

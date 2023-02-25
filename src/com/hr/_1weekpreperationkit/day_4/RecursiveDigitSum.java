@@ -6,12 +6,12 @@ public class RecursiveDigitSum {
     }
 
     public static int superDigit(String n, int k) {
-        if(n.length() == 1 && k == 1)
+        if (n.length() == 1 && k == 1)
             return Integer.parseInt(n);
 
         long sum = 0;
-        for(int i=0;i<n.length();i++)
-            sum += Integer.parseInt(n.substring(i,i+1));
+        for (int i = 0; i < n.length(); i++)
+            sum += Integer.parseInt(n.substring(i, i + 1));
 
         sum *= k;
 

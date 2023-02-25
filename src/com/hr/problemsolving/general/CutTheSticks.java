@@ -11,83 +11,83 @@ import java.util.stream.Collectors;
 //Submitted
 public class CutTheSticks {
 
-	static List<Integer> inputList = null;
+    static List<Integer> inputList = null;
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void main(String[] args) {
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        FastReader fr = new FastReader();
+        int length = fr.nextInt();
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        Integer[] arr = new Integer[length];
+        int min = 0;
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+        for (int i = 0; i < length; i++) {
+            arr[i] = fr.nextInt();
+        }
 
-		String nextLine() {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return str;
-		}
-	}
+        inputList = Arrays.asList(arr);
 
-	public static void main(String[] args) {
+        while (!inputList.isEmpty()) {
 
-		FastReader fr = new FastReader();
-		int length = fr.nextInt();
+            // trimArr
+            inputList = inputList.stream().filter(no -> no > 0).collect(Collectors.toList());
 
-		Integer[] arr = new Integer[length];
-		int min = 0;
+            // findmin
+            if (inputList.size() > 0) {
+                min = inputList.stream().min(Integer::compare).get();
 
-		for (int i = 0; i < length; i++) {
-			arr[i] = fr.nextInt();
-		}
+                // getCount
+                getCount(inputList, min);
+            }
 
-		inputList = Arrays.asList(arr);
+        }
 
-		while (!inputList.isEmpty()) {
+    }
 
-			// trimArr
-			inputList = inputList.stream().filter(no -> no > 0).collect(Collectors.toList());
-			
-			// findmin
-			if (inputList.size() > 0) {
-				min = inputList.stream().min(Integer::compare).get();
-				
-				// getCount
-				getCount(inputList, min);
-			}
+    private static void getCount(List<Integer> inputList, int min) {
 
-		}
+        int count = 0;
+        int size = inputList.size();
+        for (int i = 0; i < size; i++) {
+            inputList.set(i, inputList.get(i) - min);
+            count++;
+        }
 
-	}
+        System.out.println(count);
+    }
 
-	private static void getCount(List<Integer> inputList, int min) {
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-		int count = 0;
-		int size = inputList.size();
-		for (int i = 0; i < size; i++) {
-			inputList.set(i, inputList.get(i) - min);
-			count++;
-		}
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		System.out.println(count);
-	}
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
 
 }

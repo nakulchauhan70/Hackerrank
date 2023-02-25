@@ -8,57 +8,57 @@ import java.util.StringTokenizer;
 
 public class SherlockAndSquares {
 
-	static ArrayList<Integer> countList = new ArrayList<>();
+    static ArrayList<Integer> countList = new ArrayList<>();
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void main(String[] args) {
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        FastReader fr = new FastReader();
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        int testCase = fr.nextInt();
+        int a, b;
 
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
+        while (testCase != 0) {
+            a = fr.nextInt();
+            b = fr.nextInt();
+            countList.add((int) Math.floor(Math.sqrt(b)) - (int) Math.ceil(Math.sqrt(a)) + 1);
+            testCase--;
+        }
 
-		String nextLine() {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return str;
-		}
-	}
+        countList.forEach(System.out::println);
+    }
 
-	public static void main(String[] args) {
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-		FastReader fr = new FastReader();
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		int testCase = fr.nextInt();
-		int a,b;
-		
-		while (testCase != 0) {
-			a = fr.nextInt();
-			b = fr.nextInt();
-			countList.add((int)Math.floor(Math.sqrt(b)) - (int)Math.ceil(Math.sqrt(a)) + 1); 
-			testCase--;
-		}
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
 
-		countList.forEach(System.out::println);
-	}
+        int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
 
 }

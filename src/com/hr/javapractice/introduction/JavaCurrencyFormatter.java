@@ -9,45 +9,45 @@ import java.util.StringTokenizer;
 
 public class JavaCurrencyFormatter {
 
-	static class FastReader {
-		BufferedReader br;
-		StringTokenizer st;
+    public static void main(String[] args) {
+        FastReader fr = new FastReader();
+        double amount = fr.nextDouble();
 
-		public FastReader() {
-			br = new BufferedReader(new InputStreamReader(System.in));
-		}
+        NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
+        NumberFormat chinaFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
 
-		String next() {
-			while (st == null || !st.hasMoreElements()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			return st.nextToken();
-		}
+        // Write your code here.
 
-		double nextDouble() {
-			return Double.parseDouble(next());
-		}
+        System.out.println("US: " + usFormat.format(amount));
+        System.out.println("India: Rs." + indiaFormat.format(amount));
+        System.out.println("China: " + chinaFormat.format(amount));
+        System.out.println("France: " + franceFormat.format(amount));
+    }
 
-	}
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-	public static void main(String[] args) {
-		FastReader fr = new FastReader();
-		double amount = fr.nextDouble();
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
 
-		NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
-		NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
-		NumberFormat chinaFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
-		NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        String next() {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
 
-		// Write your code here.
+        double nextDouble() {
+            return Double.parseDouble(next());
+        }
 
-		System.out.println("US: " + usFormat.format(amount));
-		System.out.println("India: Rs." + indiaFormat.format(amount));
-		System.out.println("China: " + chinaFormat.format(amount));
-		System.out.println("France: " + franceFormat.format(amount));
-	}
+    }
 }
